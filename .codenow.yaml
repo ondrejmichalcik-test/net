@@ -19,7 +19,7 @@ build:
     preview:
       pipeline: dotnet-nuget-app-preview
     triggers:
-      - pipeline: dotnet-nuget-app-preview
+      - pipeline: java-maven-app-preview
         enabled: true
         branch: main
         deployment:
