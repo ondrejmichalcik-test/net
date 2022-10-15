@@ -1,0 +1,30 @@
+version: v1
+# If advanced mode is active CI pipelines use Dockerfile and helm descriptor from repository
+advancedMode:
+  enabled: false
+build:
+  # recommendation: use the bitnami dotnet repo if you want to change runtime version: https://hub.docker.com/r/bitnami/dotnet-sdk
+  image: bitnami/dotnet-sdk:6.0.302
+  # definitions of environment variables that will be used in all stages of your pipeline
+  environmentVariables: []
+    #- key: variable1
+    #  value: value1
+    #- key: variable2
+    #  value: value2
+    #- key: variable3
+    #  value: value3
+  pipelines:
+    release:
+      pipeline: dotnet-nuget-app-release
+    preview:
+      pipeline: dotnet-nuget-app-preview
+    triggers: []
+runtime:
+  # Image is used as a base image for your runtime container
+  image: mcr.microsoft.com/dotnet/aspnet:6.0
+  # Port on which the service will be exposed
+  port: 80
+  endpoints:
+    external:
+      # Expose service to external endpoint
+      enabled: true
