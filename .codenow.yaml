@@ -18,12 +18,7 @@ build:
       pipeline: dotnet-nuget-app-release
     preview:
       pipeline: dotnet-nuget-app-preview
-    triggers:
-      - pipeline: dotnet-nuget-app-preview
-        enabled: true
-        branch: main
-        deployment:
-          enabled: false
+    triggers: []
 runtime:
   # Image is used as a base image for your runtime container
   image: mcr.microsoft.com/dotnet/aspnet:6.0
