@@ -1,7 +1,7 @@
 version: v1
 # If advanced mode is active CI pipelines use Dockerfile and helm descriptor from repository
 advancedMode:
-  enabled: true
+  enabled: false
 build:
   # recommendation: use the bitnami dotnet repo if you want to change runtime version: https://hub.docker.com/r/bitnami/dotnet-sdk
   image: bitnami/dotnet-sdk:6.0.302
